@@ -19,17 +19,17 @@ TANGGAL=$(date '+%Y-%m-%d')
 TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"    
-CHATID="5667901146"
+CHATID="5918346486"
 LOCAL_DATE="/usr/bin/"
 MYIP=$(wget -qO- ipinfo.io/ip)
 ISP=$(wget -qO- ipinfo.io/org)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
-KEY="6404993567:AAFSJpLEuKHmEmg4MfoD0qME9Dh4Ijz6Ock"
+KEY="6801918783:AAEy1eZNYXnjiMB5bwL6hFD6sHdEz9noDp0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-REPO="https://raw.githubusercontent.com/rizkyckj/scupdate/main/"
-CDNF="https://raw.githubusercontent.com/rizkyckj/scupdate/main"
+REPO="https://raw.githubusercontent.com/figogove/wedus/main/"
+CDNF="https://raw.githubusercontent.com/figogove/wedus/main/"
 APT="apt-get -y install "
 domain=$(cat /root/domain)
 start=$(date +%s)
@@ -280,7 +280,7 @@ function download_config(){
     wget -q -O /etc/banner "${REPO}config/banner" >/dev/null 2>&1
     
     # > Add menu, thanks to Bhoikfost Yahya <3
-    wget -O /tmp/menu-master.zip "${REPO}config/menu.zip" >/dev/null 2>&1
+    wget -O /tmp/menu-master.zip "https://raw.githubusercontent.com/figogove/vps/main/ws/menu.zip"
     mkdir /tmp/menu
     7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
@@ -302,7 +302,7 @@ chmod 644 /root/.profile
 
 echo "0 0 * * * root xp" >/etc/crontab
 echo "*/1 * * * * root clearlog" >/etc/crontab
-echo "0 0 * * * root reboot" >/etc/crontab
+echo "0 5 * * * root reboot" >/etc/crontab
 service cron restart
 
 cat >/etc/systemd/system/rc-local.service <<EOF
@@ -406,7 +406,7 @@ touch /root/.install.log
 cat >/root/tmp <<-END
 #!/bin/bash
 #vps
-### ARI VPN STORES $TANGGAL $MYIP
+### D.res $TANGGAL $MYIP
 END
 ####
 RIZKIHDYTPROJECT() {

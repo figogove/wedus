@@ -280,7 +280,7 @@ function download_config(){
     wget -q -O /etc/banner "${REPO}config/banner" >/dev/null 2>&1
     
     # > Add menu, thanks to Bhoikfost Yahya <3
-    wget -O /tmp/menu-master.zip "https://raw.githubusercontent.com/figogove/vps/main/config/menu.zip"
+    wget -O /tmp/menu-master.zip "https://raw.githubusercontent.com/figogove/vps/main/config/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
     7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
